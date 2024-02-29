@@ -1,7 +1,7 @@
 #### Preamble ####
 # Purpose: Downloads and saves the data from [...UPDATE THIS...]
-# Author: Rohan Alexander [...UPDATE THIS...]
-# Date: 11 February 2023 [...UPDATE THIS...]
+# Author: Sehar Bajwa
+# Date: 29 February 2024 [...UPDATE THIS...]
 # Contact: rohan.alexander@utoronto.ca [...UPDATE THIS...]
 # License: MIT
 # Pre-requisites: [...UPDATE THIS...]
@@ -9,12 +9,17 @@
 
 
 #### Workspace setup ####
-library(opendatatoronto)
 library(tidyverse)
-# [...UPDATE THIS...]
+library(httr)
 
 #### Download data ####
-# [...ADD CODE HERE TO DOWNLOAD...]
+NASA <-
+  GET("https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY&date=2024-02-29")
+
+content(NASA)
+content(NASA)$date
+
+knitr::include_graphics(content(NASA)$url)
 
 
 
